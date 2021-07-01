@@ -11,7 +11,4 @@ class FriendshipsController < ApplicationController
           redirect_to users_path, notice: @friendship.errors.full_messages
         end
     end
-
-    def show
-    end
 end
