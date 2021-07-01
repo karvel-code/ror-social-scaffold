@@ -11,4 +11,16 @@ class FriendshipsController < ApplicationController
           redirect_to users_path, notice: @friendship.errors.full_messages
         end
     end
+
+    def destroy
+      @friendship = Friendship.find_by(id: params[:id])
+      @friendship.destroy
+      redirect_to root_path
+    end
+
+    def update
+      @friendship = Friendship.find_by(id: params[:id])
+      @friendship.update_attribute(:confirmed, true)
+      redirect_to root_path
+    end
 end
