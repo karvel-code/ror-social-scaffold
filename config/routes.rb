@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   end
   resources :friendships
 
+  resources :users, only: [index, :show] do
+    get :friends, :unconfirmed_requests, on: :member
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
