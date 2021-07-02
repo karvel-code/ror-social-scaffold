@@ -2,6 +2,10 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <% if user != current_user %>
     <%= link_to 'Send Friend Request', friendships_path(friend_id: user.id), method: :'POST' %>
+    <% else %>
+    <%= link_to 'Current User', '#' %>
+    <%end%>
   </span>
 </li>
