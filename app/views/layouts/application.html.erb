@@ -20,6 +20,7 @@
         <% if current_user %>
         <div class="menu-item">
           <%= menu_link_to 'Unconfirmed Requests', unconfirmed_requests_user_path(current_user) %>
+          <%= menu_link_to 'Friends', friends_user_path(current_user) %>
         </div>
         <%end%>
       </div>
