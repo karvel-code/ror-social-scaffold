@@ -29,7 +29,7 @@ RSpec.feature 'Friendships', type: :feature do
     fill_in 'Email', with: 'elvis@gmail.com'
     fill_in 'Password', with: 'elvis123'
     click_button 'Log in'
-    visit users_path
+    # visit users_path
     expect(page).to have_link('Send Friend Request')
     click_link 'Send Friend Request'
   end
