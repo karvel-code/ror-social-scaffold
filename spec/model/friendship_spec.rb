@@ -17,5 +17,4 @@ RSpec.describe Friendship, type: :model do
   it 'ensures that friendship default status should be false' do
     expect(friendship.confirmed).to be nil
   end
-
 end
