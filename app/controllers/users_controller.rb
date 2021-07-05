@@ -16,6 +16,6 @@ class UsersController < ApplicationController
   end
 
   def friends
-    @friends = current_user.friends
+    @friends = current_user.friends_list
   end
 end
