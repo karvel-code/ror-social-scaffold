@@ -12,7 +12,7 @@
     <% @inverted_friendships.each do |friendship| %>
         <span>
         <p><%= friendship.user.name %></p>
-        <%= link_to 'Accept', friendship_path(friendship), method: :patch %>
+        <%= link_to 'Accept', confirm_friendship_path(friendship) %>
         <%= link_to 'Cancel', friendship_path(friendship), method: :delete %>
         </span>
    <%end%>

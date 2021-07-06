@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  resources :friendships, only: [:index, :create, :destroy] do
+    member do
+      get 'confirm'
+    end
+  end
   devise_for :users
 
   resources :users, only: [:index, :show]
@@ -9,10 +14,13 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]
   end
-  resources :friendships
 
   resources :users, only: [:index, :show] do
     get :friends, :unconfirmed_requests, on: :member
+  end
+
+  resources :users, only: [:index, :show] do
+    get :friends, :confirm, on: :member
   end
 
   
