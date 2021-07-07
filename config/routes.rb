@@ -2,11 +2,6 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :friendships, only: [:index, :create, :destroy] do
-    member do
-      get 'confirm'
-    end
-  end
   devise_for :users
 
   resources :users, only: [:index, :show]
