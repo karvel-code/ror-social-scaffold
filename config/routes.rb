@@ -10,5 +10,16 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  resources :users, only: [:index, :show] do
+    get :friends, :unconfirmed_requests, on: :member
+  end
+
+  resources :users, only: [:index, :show] do
+    get :friends, :confirm, on: :member
+  end
+
+  
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

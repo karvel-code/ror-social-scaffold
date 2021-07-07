@@ -1,5 +1,14 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
+  <% if @user != current_user && !current_user.pending_friends.include?(@user) && !current_user.friends.include?(@user) %>
+    <%= link_to 'Send Friend Request', friendships_path(friend_id: @user.id), method: :'POST' %>
+    <% elsif current_user.friends.include?(@user) %>
+    <%= link_to 'Friends', '#' %>
+    <% elsif @user == current_user %>
+    <%= link_to 'Current User', '#' %>
+    <% else %>
+    <%= link_to 'Pending', '#' %>
+  <%end%>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
