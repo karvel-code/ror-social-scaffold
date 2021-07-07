@@ -1,7 +1,7 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
   <% if @user != current_user && !current_user.pending_friends.include?(@user) && !current_user.friends.include?(@user) %>
-    <%= link_to 'Send Friend Request', friendships_path(friend_id: user.id), method: :'POST' %>
+    <%= link_to 'Send Friend Request', friendships_path(friend_id: @user.id), method: :'POST' %>
     <% elsif current_user.friends.include?(@user) %>
     <%= link_to 'Friends', '#' %>
     <% elsif @user == current_user %>
