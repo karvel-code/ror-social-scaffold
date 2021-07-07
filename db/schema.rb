@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_082817) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "friendships", force: :cascade do |t|
+ '' create_table "friendships", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "friend_id"
     t.boolean "confirmed"
