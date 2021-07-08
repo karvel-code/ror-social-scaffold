@@ -18,6 +18,14 @@ class FriendshipsController < ApplicationController
     redirect_to root_path
   end
 
+  # def remove_friendship
+  #   @friendship = Friendship.find_by user_id: current_user.id, friend_id: params[:id]
+  #   @friendship_reverse = Friendship.find_by friend_id: current_user.id, user_id: params[:id]
+  #   @friendship&.destroy
+  #   @friendship_reverse&.destroy
+  #   redirect_to users_path
+  # end
+
   def confirm
     @friendship = Friendship.find_by(id: params[:id])
     @friendship.update_attribute(:confirmed, true)

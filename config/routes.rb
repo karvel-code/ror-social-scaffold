@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :friendships
+  resources :friendships, only: [:Index, :create, :destroy] do
+    member do
+      get 'confirm'
+      # get 'remove_friendship'
+    end
+  end
 
   devise_for :users
 
