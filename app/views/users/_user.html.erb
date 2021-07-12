@@ -9,7 +9,7 @@
     <% elsif user == current_user %>
     <%= link_to 'Current User', '#' %>
     <% else %>
-    <%= link_to 'Pending', '#' %>
+    <%= link_to 'Pending', friendship_path(current_user.pending_friendships.find_by(friend_id:user.id)), method: :delete %>
     <%end%>
   </span>
 </li>
