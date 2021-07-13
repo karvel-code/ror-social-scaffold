@@ -9,7 +9,9 @@
 
 ## Live Demo
 
-TBA
+Below is a link of the deployed application:
+
+https://calm-waters-16555.herokuapp.com/
 
 
 ## Getting Started
@@ -60,7 +62,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec --format documentation
 ```
 
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
@@ -71,7 +73,10 @@ TBA
 
 ## Authors
 
-TBA
+👤 **Elvis Kariithi Githinji**
+
+- Github: [@karvel-code](https://github.com/karvel-code)
+- Linkedin: [Elvis Githinji](https://www.linkedin.com/in/elvis-githinji/)
 
 ## 🤝 Contributing
 
