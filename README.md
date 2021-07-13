@@ -75,8 +75,8 @@ TBA
 
 👤 **Elvis Kariithi Githinji**
 
-- Github: [@githubhandle](https://github.com/karvel-code)
-- Linkedin: [linkedin](https://www.linkedin.com/in/elvis-githinji/)
+- Github: [@karvel-code](https://github.com/karvel-code)
+- Linkedin: [Elvis Githinji](https://www.linkedin.com/in/elvis-githinji/)
 
 ## 🤝 Contributing
 
