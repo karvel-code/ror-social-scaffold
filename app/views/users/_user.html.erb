@@ -2,5 +2,14 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <% if user != current_user && !current_user.friends.include?(user) && !current_user.pending_friends.include?(user) && !current_user.friend_requests.include?(user) %>
+    <%= link_to 'Send Friend Request', friendships_path(friend_id: user.id), method: :'POST' %>
+    <% elsif current_user.friends.include?(user) %>
+    <%= link_to 'Friends', '#' %>
+    <% elsif user == current_user %>
+    <%= link_to 'Current User', '#' %>
+    <% else %>
+    <%= link_to 'Pending', friendship_path(current_user.pending_friendships.find_by(friend_id:user.id)), method: :delete %>
+    <%end%>
   </span>
 </li>

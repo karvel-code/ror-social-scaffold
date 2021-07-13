@@ -1,0 +1,19 @@
+<% if @pending_friendships.any? %>
+    <h3>Pending Friendships </h3>
+    <% @pending_friendships.each do |friendship| %>
+         <span><%= friendship.friend.name %></span>
+         <span> 
+         <%= link_to 'Cancel', friendship_path(friendship), method: :delete %>
+         </span>
+    <%end%>
+<%end%>
+<% if @inverted_friendships.any? %>
+    <h3>Friendship Requests </h3>
+    <% @inverted_friendships.each do |friendship| %>
+        <span>
+        <p><%= friendship.user.name %></p>
+        <%= link_to 'Accept', confirm_friendship_path(friendship) %>
+        <%= link_to 'Cancel', friendship_path(friendship), method: :delete %>
+        </span>
+   <%end%>
+<%end%>
